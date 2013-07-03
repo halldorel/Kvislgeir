@@ -1,7 +1,7 @@
 import pygame, sys, os
 from pygame.locals import *
 import math
-
+""" hero is secretly homo """
 class Hero:
 	"""Hero"""
 	# Constants
