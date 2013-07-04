@@ -48,7 +48,7 @@ while True:
 	if keys[K_UP]:
 		hero.throttle()
 	#if keys[K_DOWN]:
-		# back turn
+		
 	if keys[K_LEFT]:
 		hero.turn(0)
 	if keys[K_RIGHT]:
@@ -71,14 +71,18 @@ while True:
 	window.blit(parallax.surf(), parallax.render_pos)
 	window.blit(hero.render, hero.render_pos)
 	
+	
 	#star.render(space.surf())
 	
 	if dev:
 		pygame.draw.line(window, pygame.Color(255, 255, 255), (320, 240), (320+4*hero.vel[0], 240-4*hero.vel[1]))
 		text = basic_font.render("Velocity: %s" % round(hero.get_speed(), 3), True, (255, 255, 255))
 		text2 = basic_font.render("Pos: %s" % space.get_pos(), True, (255, 255, 255))
+		text3 = basic_font.render("Speed Direction: %s" % hero.get_speed_dir(), True, (255, 255, 255))
 		window.blit(text, (20, 440))
 		window.blit(text2, (20, 410))
+		window.blit(text3, (20, 380))
+		
 	pygame.display.update()
 	
 	fpsClock.tick(30)

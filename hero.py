@@ -33,12 +33,32 @@ class Hero:
 		
 		# Render position to keep center align
 		self.render_pos = [self.pos[0]+(w1-w2)/2, self.pos[1]+(h1-h2)/2]
+		
+#	def back_turn(self):
 
 	def speed(self, vector):
 		return math.sqrt(vector[0]**2 + vector[1]**2)
-		
+	
 	def get_speed(self):
 		return self.speed(self.vel)
+	
+	# Get direction of hero travel direction
+	def get_speed_dir(self):
+		speed = self.speed(self.vel)
+		if speed > 0:
+			x = int(round(math.degrees(math.acos(self.vel[0]/speed))))
+			y = int(round(math.degrees(math.asin(self.vel[1]/speed))))
+			
+			if x > 0 and y < 0:
+				if x == -y:
+					return 360 - x
+				else:
+					return 180 - y
+			else:
+				return x
+			
+		else:
+			return None
 		
 	def throttle(self):
 		# Add speed to given direction
