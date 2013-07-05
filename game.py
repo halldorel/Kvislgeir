@@ -53,6 +53,9 @@ while True:
 		hero.turn(0)
 	if keys[K_RIGHT]:
 		hero.turn(1)
+	if keys[K_SPACE]:
+		space.render_pos = [0,0]
+		parallax.render_pos = [0,0]
 	if keys[K_ESCAPE]:
 		pygame.event.post(Event.QUIT)
 	for event in pygame.event.get():
