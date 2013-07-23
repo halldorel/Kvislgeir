@@ -7,7 +7,7 @@ class Hero:
 	# Constants
 	MAX_SPEED = 0.1
 	ACCEL = 0.3
-	TURN_SPEED = 7
+	TURN_SPEED = 8
 	
 	def __init__(self, window_size):
 		self.pos = [x/2-38 for x in window_size]

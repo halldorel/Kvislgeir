@@ -39,6 +39,12 @@ for i in range(starcount):
 		stars[i].render(parallax.surf())
 	else:
 		stars.append(Star(randint(3, 5), (randint(0, 10000), randint(0, 10000))))
+		#size = randint(3, 5)
+		#x = randint(0, 10000)
+		#y = randint(0, 10000)
+		
+#stars = [Star(size, x, y) in range(starcount)].render(space.surf())
+		
 		stars[i].render(space.surf())
 
 while True:
@@ -73,7 +79,6 @@ while True:
 	window.blit(space.surf(), space.render_pos)
 	window.blit(parallax.surf(), parallax.render_pos)
 	window.blit(hero.render, hero.render_pos)
-	
 	
 	#star.render(space.surf())
 	
